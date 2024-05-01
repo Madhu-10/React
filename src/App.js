@@ -6,7 +6,8 @@ import './App.css';
 // import Box from './components/Box';
 // import Person from './components/Person';
 // import ScoreBoard from './components/ScoreBoard'
-import Garrage from './components/Garrage'
+// import Garrage from './components/Garrage'
+import ProductCard from './components/ProductCard';
 
 function App() {
   // const buttonClicked = () => {
@@ -24,6 +25,10 @@ function App() {
     {key: 1, value: "Madhu"},
     {key: 2, value: "Deepi"},
     {key: 3, value: "Dharshini"}
+  ]
+  const items = [
+    {title: "Watch", desc: "Titan Watch", price: "450.50"},
+    {title: "Pen", desc: "Parker Pen", price: "600.50"}
   ]
   return (
     <div>
@@ -61,11 +66,22 @@ function App() {
           )
         }
         </ul>
+        
         {
       students.map((student)=>{
         return <>
           {student.key} ===== {student.value} <br></br>
         </>
+      })
+    }
+    
+    {
+      items.map((item)=>{
+        return <ProductCard 
+          title = {item.title}
+          desc = {item.desc}
+          price = {item.price}        
+        />
       })
     }
     </div>
